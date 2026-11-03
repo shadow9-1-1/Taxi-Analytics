@@ -65,13 +65,17 @@ def main(exe):
             print(size, mode, p, policy, runtime, flush=True)
     save("timings.csv", trials)
     save("summary.csv", summary)
+    plot(summary)
+
+
+def plot(summary):
     Path("plots").mkdir(exist_ok=True)
     for field, ylabel in [("speedup", "Speedup (times sequential)"), ("efficiency", "Parallel efficiency (%)")]:
         fig, ax = plt.subplots(figsize=(7.3, 3.05), layout="constrained")
         for size, color, marker in [("100MB", "#98703c", "s"), ("500MB", "#426da1", "^"), ("full", "#00776e", "o")]:
             rows = [r for r in summary if r["dataset"]==size and r["mode"]=="omp" and r["schedule"]=="static"]
             ax.plot([r["threads"] for r in rows], [r[field]*(100 if field=="efficiency" else 1) for r in rows],
-                    marker=marker, color=color, label=size.replace("MB"," MB").capitalize())
+                    marker=marker, color=color, label=("Full" if size == "full" else size.replace("MB", " MB")))
         ax.set(xticks=[1,2,4,8], xlabel="OpenMP threads", ylabel=ylabel, ylim=(0,None))
         ax.grid(axis="y", alpha=.25)
         ax.spines[["right","top"]].set_visible(False)
