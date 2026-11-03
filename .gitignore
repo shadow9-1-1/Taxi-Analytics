@@ -1,1 +1,6 @@
-data/raw
+data/raw/
+data/processed/*.bin
+data/processed/*.tmp
+build/
+__pycache__/
+~$*

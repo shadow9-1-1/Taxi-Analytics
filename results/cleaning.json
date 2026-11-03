@@ -1,0 +1,9 @@
+{
+  "raw": 12748986,
+  "bad_time": 15192,
+  "bad_location": 250559,
+  "bad_distance": 48179,
+  "kept": 12435056,
+  "raw_bytes": 1985964692,
+  "processed_bytes": 596882688
+}
