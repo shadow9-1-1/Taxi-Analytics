@@ -1,0 +1,267 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 37.28      1.04     1.04                             _mcount_private
+ 27.24      1.80     0.76 111915504     0.00     0.00  measure(Trip const&)
+ 18.28      2.31     0.51                             __fentry__
+  3.94      2.42     0.11 111915504     0.00     0.00  double const& std::clamp<double>(double const&, double const&, double const&)
+  2.51      2.49     0.07        1    70.00    70.00  void std::__fill_a1<Trip*, Trip>(Trip*, Trip*, Trip const&)
+  2.15      2.55     0.06 111915504     0.00     0.00  double const& std::min<double>(double const&, double const&)
+  1.79      2.60     0.05 111915528     0.00     0.00  std::array<Bucket, 24ull>::operator[](unsigned long long)
+  1.79      2.65     0.05       15     3.33    72.00  sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&)
+  1.08      2.68     0.03 111915569     0.00     0.00  __gcc_deregister_frame
+  1.08      2.71     0.03                             llround
+  0.72      2.73     0.02 111915504     0.00     0.00  double const& std::max<double>(double const&, double const&)
+  0.72      2.75     0.02                             main
+  0.72      2.77     0.02                             sin
+  0.36      2.78     0.01                             asin
+  0.36      2.79     0.01                             cos
+  0.00      2.79     0.00       16     0.00     0.00  std::char_traits<char>::length(char const*)
+  0.00      2.79     0.00       12     0.00     0.00  elapsed(std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >)
+  0.00      2.79     0.00       11     0.00     0.00  std::char_traits<char>::compare(char const*, char const*, unsigned long long)
+  0.00      2.79     0.00        9     0.00     0.00  std::vector<Trip, std::allocator<Trip> >::end() const
+  0.00      2.79     0.00        9     0.00     0.00  std::vector<Trip, std::allocator<Trip> >::begin() const
+  0.00      2.79     0.00        9     0.00     0.00  std::array<Bucket, 24ull>::end()
+  0.00      2.79     0.00        9     0.00     0.00  std::array<Bucket, 24ull>::begin()
+  0.00      2.79     0.00        4     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*)
+  0.00      2.79     0.00        3     0.00     0.00  bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  0.00      2.79     0.00        2     0.00     0.00  int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int)
+  0.00      2.79     0.00        2     0.00     0.00  std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+  0.00      2.79     0.00        2     0.00     0.00  __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int)::_Save_errno::_Save_errno()
+  0.00      2.79     0.00        2     0.00     0.00  __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int)::_Save_errno::~_Save_errno()
+  0.00      2.79     0.00        1     0.00     0.00  std::_Vector_base<Trip, std::allocator<Trip> >::_M_create_storage(unsigned long long)
+  0.00      2.79     0.00        1     0.00     0.00  std::_Vector_base<Trip, std::allocator<Trip> >::_Vector_impl_data::_Vector_impl_data()
+  0.00      2.79     0.00        1     0.00    70.00  Trip* std::__uninitialized_default_n_1<true>::__uninit_default_n<Trip*, unsigned long long>(Trip*, unsigned long long)
+  0.00      2.79     0.00        1     0.00     0.00  std::fpos<_Mbstatet>::fpos(long long)
+  0.00      2.79     0.00        1     0.00   142.00  std::vector<Trip, std::allocator<Trip> >::_M_default_initialize(unsigned long long)
+  0.00      2.79     0.00        1     0.00     0.00  std::vector<Trip, std::allocator<Trip> >::end()
+  0.00      2.79     0.00        1     0.00     0.00  std::vector<Trip, std::allocator<Trip> >::begin()
+  0.00      2.79     0.00        1     0.00     0.00  std::vector<Trip, std::allocator<Trip> >::~vector()
+  0.00      2.79     0.00        1     0.00     0.00  void std::_Construct<Trip>(Trip*)
+  0.00      2.79     0.00        1     0.00     0.00  std::setprecision(int)
+  0.00      2.79     0.00        1     0.00     0.00  std::__size_to_integer(unsigned long long)
+  0.00      2.79     0.00        1     0.00     0.00  Trip* std::__uninitialized_default_n<Trip*, unsigned long long>(Trip*, unsigned long long)
+  0.00      2.79     0.00        1     0.00     0.00  std::operator~(std::_Ios_Fmtflags)
+  0.00      2.79     0.00        1     0.00     0.00  bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  0.00      2.79     0.00        1     0.00     0.00  std::operator|(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 0.36% of 2.79 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     41.9    0.02    1.15                 main [1]
+                0.05    0.96      14/15          sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+                0.00    0.14       1/1           std::vector<Trip, std::allocator<Trip> >::_M_default_initialize(unsigned long long) [6]
+                0.00    0.00      24/111915528     std::array<Bucket, 24ull>::operator[](unsigned long long) [11]
+                0.00    0.00      12/12          elapsed(std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >) [18]
+                0.00    0.00      25/111915569     __gcc_deregister_frame [13]
+                0.00    0.00       9/9           std::array<Bucket, 24ull>::begin() [87]
+                0.00    0.00       9/9           std::array<Bucket, 24ull>::end() [86]
+                0.00    0.00       2/3           bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [89]
+                0.00    0.00       1/1           std::fpos<_Mbstatet>::fpos(long long) [95]
+                0.00    0.00       1/1           std::vector<Trip, std::allocator<Trip> >::begin() [97]
+                0.00    0.00       1/1           std::vector<Trip, std::allocator<Trip> >::end() [96]
+                0.00    0.00       1/1           std::setprecision(int) [99]
+                0.00    0.00       1/1           bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [103]
+                0.00    0.00       1/1           std::vector<Trip, std::allocator<Trip> >::~vector() [98]
+-----------------------------------------------
+                                   6             sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+                0.00    0.07       1/15          std::vector<Trip, std::allocator<Trip> >::_M_default_initialize(unsigned long long) [6]
+                0.05    0.96      14/15          main [1]
+[2]     38.7    0.05    1.03      15+6       sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+                0.76    0.19 111915504/111915504     measure(Trip const&) [4]
+                0.05    0.00 111915504/111915528     std::array<Bucket, 24ull>::operator[](unsigned long long) [11]
+                0.03    0.00 111915509/111915569     __gcc_deregister_frame [13]
+                0.00    0.00       1/1           std::_Vector_base<Trip, std::allocator<Trip> >::_M_create_storage(unsigned long long) [19]
+                0.00    0.00       9/9           std::vector<Trip, std::allocator<Trip> >::begin() const [85]
+                0.00    0.00       9/9           std::vector<Trip, std::allocator<Trip> >::end() const [84]
+                0.00    0.00       4/4           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*) [88]
+                0.00    0.00       4/16          std::char_traits<char>::length(char const*) [82]
+                0.00    0.00       1/1           std::_Vector_base<Trip, std::allocator<Trip> >::_Vector_impl_data::_Vector_impl_data() [94]
+                                   6             sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]     37.3    1.04    0.00                 _mcount_private [3]
+-----------------------------------------------
+                0.76    0.19 111915504/111915504     sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+[4]     34.1    0.76    0.19 111915504         measure(Trip const&) [4]
+                0.11    0.02 111915504/111915504     double const& std::clamp<double>(double const&, double const&, double const&) [7]
+                0.06    0.00 111915504/111915504     double const& std::min<double>(double const&, double const&) [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]     18.3    0.51    0.00                 __fentry__ [5]
+-----------------------------------------------
+                0.00    0.14       1/1           main [1]
+[6]      5.1    0.00    0.14       1         std::vector<Trip, std::allocator<Trip> >::_M_default_initialize(unsigned long long) [6]
+                0.00    0.07       1/15          sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+                0.00    0.07       1/1           Trip* std::__uninitialized_default_n_1<true>::__uninit_default_n<Trip*, unsigned long long>(Trip*, unsigned long long) [8]
+                0.00    0.00       1/1           Trip* std::__uninitialized_default_n<Trip*, unsigned long long>(Trip*, unsigned long long) [101]
+-----------------------------------------------
+                0.11    0.02 111915504/111915504     measure(Trip const&) [4]
+[7]      4.7    0.11    0.02 111915504         double const& std::clamp<double>(double const&, double const&, double const&) [7]
+                0.02    0.00 111915504/111915504     double const& std::max<double>(double const&, double const&) [15]
+-----------------------------------------------
+                0.00    0.07       1/1           std::vector<Trip, std::allocator<Trip> >::_M_default_initialize(unsigned long long) [6]
+[8]      2.5    0.00    0.07       1         Trip* std::__uninitialized_default_n_1<true>::__uninit_default_n<Trip*, unsigned long long>(Trip*, unsigned long long) [8]
+                0.07    0.00       1/1           void std::__fill_a1<Trip*, Trip>(Trip*, Trip*, Trip const&) [9]
+                0.00    0.00       1/1           void std::_Construct<Trip>(Trip*) [21]
+                0.00    0.00       1/1           std::__size_to_integer(unsigned long long) [100]
+-----------------------------------------------
+                0.07    0.00       1/1           Trip* std::__uninitialized_default_n_1<true>::__uninit_default_n<Trip*, unsigned long long>(Trip*, unsigned long long) [8]
+[9]      2.5    0.07    0.00       1         void std::__fill_a1<Trip*, Trip>(Trip*, Trip*, Trip const&) [9]
+-----------------------------------------------
+                0.06    0.00 111915504/111915504     measure(Trip const&) [4]
+[10]     2.2    0.06    0.00 111915504         double const& std::min<double>(double const&, double const&) [10]
+-----------------------------------------------
+                0.00    0.00      24/111915528     main [1]
+                0.05    0.00 111915504/111915528     sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+[11]     1.8    0.05    0.00 111915528         std::array<Bucket, 24ull>::operator[](unsigned long long) [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     1.1    0.03    0.00                 llround [12]
+-----------------------------------------------
+                                 103             __gcc_deregister_frame [13]
+                0.00    0.00       1/111915569     void std::_Construct<Trip>(Trip*) [21]
+                0.00    0.00       2/111915569     std::_Vector_base<Trip, std::allocator<Trip> >::_M_create_storage(unsigned long long) [19]
+                0.00    0.00       2/111915569     std::fixed(std::ios_base&) [20]
+                0.00    0.00      25/111915569     main [1]
+                0.00    0.00      30/111915569     elapsed(std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >) [18]
+                0.03    0.00 111915509/111915569     sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+[13]     1.1    0.03    0.00 111915569+103     __gcc_deregister_frame [13]
+                0.00    0.00       9/16          std::char_traits<char>::length(char const*) [82]
+                0.00    0.00       9/11          std::char_traits<char>::compare(char const*, char const*, unsigned long long) [83]
+                0.00    0.00       2/2           std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [91]
+                0.00    0.00       1/1           std::operator|(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [104]
+                0.00    0.00       1/1           std::operator~(std::_Ios_Fmtflags) [102]
+                                 103             __gcc_deregister_frame [13]
+-----------------------------------------------
+                                                 <spontaneous>
+[14]     0.7    0.02    0.00                 sin [14]
+-----------------------------------------------
+                0.02    0.00 111915504/111915504     double const& std::clamp<double>(double const&, double const&, double const&) [7]
+[15]     0.7    0.02    0.00 111915504         double const& std::max<double>(double const&, double const&) [15]
+-----------------------------------------------
+                                                 <spontaneous>
+[16]     0.4    0.01    0.00                 asin [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     0.4    0.01    0.00                 cos [17]
+-----------------------------------------------
+                0.00    0.00      12/12          main [1]
+[18]     0.0    0.00    0.00      12         elapsed(std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >) [18]
+                0.00    0.00      30/111915569     __gcc_deregister_frame [13]
+                0.00    0.00       2/2           int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int) [90]
+-----------------------------------------------
+                0.00    0.00       1/1           sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+[19]     0.0    0.00    0.00       1         std::_Vector_base<Trip, std::allocator<Trip> >::_M_create_storage(unsigned long long) [19]
+                0.00    0.00       2/111915569     __gcc_deregister_frame [13]
+-----------------------------------------------
+                                                 <spontaneous>
+[20]     0.0    0.00    0.00                 std::fixed(std::ios_base&) [20]
+                0.00    0.00       2/111915569     __gcc_deregister_frame [13]
+-----------------------------------------------
+                0.00    0.00       1/1           Trip* std::__uninitialized_default_n_1<true>::__uninit_default_n<Trip*, unsigned long long>(Trip*, unsigned long long) [8]
+[21]     0.0    0.00    0.00       1         void std::_Construct<Trip>(Trip*) [21]
+                0.00    0.00       1/111915569     __gcc_deregister_frame [13]
+-----------------------------------------------
+                0.00    0.00       3/16          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [89]
+                0.00    0.00       4/16          sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+                0.00    0.00       9/16          __gcc_deregister_frame [13]
+[82]     0.0    0.00    0.00      16         std::char_traits<char>::length(char const*) [82]
+-----------------------------------------------
+                0.00    0.00       2/11          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [89]
+                0.00    0.00       9/11          __gcc_deregister_frame [13]
+[83]     0.0    0.00    0.00      11         std::char_traits<char>::compare(char const*, char const*, unsigned long long) [83]
+-----------------------------------------------
+                0.00    0.00       9/9           sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+[84]     0.0    0.00    0.00       9         std::vector<Trip, std::allocator<Trip> >::end() const [84]
+-----------------------------------------------
+                0.00    0.00       9/9           sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+[85]     0.0    0.00    0.00       9         std::vector<Trip, std::allocator<Trip> >::begin() const [85]
+-----------------------------------------------
+                0.00    0.00       9/9           main [1]
+[86]     0.0    0.00    0.00       9         std::array<Bucket, 24ull>::end() [86]
+-----------------------------------------------
+                0.00    0.00       9/9           main [1]
+[87]     0.0    0.00    0.00       9         std::array<Bucket, 24ull>::begin() [87]
+-----------------------------------------------
+                0.00    0.00       4/4           sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+[88]     0.0    0.00    0.00       4         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*) [88]
+-----------------------------------------------
+                0.00    0.00       1/3           bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [103]
+                0.00    0.00       2/3           main [1]
+[89]     0.0    0.00    0.00       3         bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [89]
+                0.00    0.00       3/16          std::char_traits<char>::length(char const*) [82]
+                0.00    0.00       2/11          std::char_traits<char>::compare(char const*, char const*, unsigned long long) [83]
+-----------------------------------------------
+                0.00    0.00       2/2           elapsed(std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >) [18]
+[90]     0.0    0.00    0.00       2         int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int) [90]
+                0.00    0.00       2/2           __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int)::_Save_errno::_Save_errno() [92]
+                0.00    0.00       2/2           __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int)::_Save_errno::~_Save_errno() [93]
+-----------------------------------------------
+                0.00    0.00       2/2           __gcc_deregister_frame [13]
+[91]     0.0    0.00    0.00       2         std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [91]
+-----------------------------------------------
+                0.00    0.00       2/2           int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int) [90]
+[92]     0.0    0.00    0.00       2         __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int)::_Save_errno::_Save_errno() [92]
+-----------------------------------------------
+                0.00    0.00       2/2           int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int) [90]
+[93]     0.0    0.00    0.00       2         __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int)::_Save_errno::~_Save_errno() [93]
+-----------------------------------------------
+                0.00    0.00       1/1           sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [2]
+[94]     0.0    0.00    0.00       1         std::_Vector_base<Trip, std::allocator<Trip> >::_Vector_impl_data::_Vector_impl_data() [94]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[95]     0.0    0.00    0.00       1         std::fpos<_Mbstatet>::fpos(long long) [95]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[96]     0.0    0.00    0.00       1         std::vector<Trip, std::allocator<Trip> >::end() [96]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[97]     0.0    0.00    0.00       1         std::vector<Trip, std::allocator<Trip> >::begin() [97]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[98]     0.0    0.00    0.00       1         std::vector<Trip, std::allocator<Trip> >::~vector() [98]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[99]     0.0    0.00    0.00       1         std::setprecision(int) [99]
+-----------------------------------------------
+                0.00    0.00       1/1           Trip* std::__uninitialized_default_n_1<true>::__uninit_default_n<Trip*, unsigned long long>(Trip*, unsigned long long) [8]
+[100]    0.0    0.00    0.00       1         std::__size_to_integer(unsigned long long) [100]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Trip, std::allocator<Trip> >::_M_default_initialize(unsigned long long) [6]
+[101]    0.0    0.00    0.00       1         Trip* std::__uninitialized_default_n<Trip*, unsigned long long>(Trip*, unsigned long long) [101]
+-----------------------------------------------
+                0.00    0.00       1/1           __gcc_deregister_frame [13]
+[102]    0.0    0.00    0.00       1         std::operator~(std::_Ios_Fmtflags) [102]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[103]    0.0    0.00    0.00       1         bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [103]
+                0.00    0.00       1/3           bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [89]
+-----------------------------------------------
+                0.00    0.00       1/1           __gcc_deregister_frame [13]
+[104]    0.0    0.00    0.00       1         std::operator|(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [104]
+-----------------------------------------------
+
+Index by function name
+
+   [2] sequential(std::vector<Trip, std::allocator<Trip> > const&, std::array<Bucket, 24ull>&) [6] std::vector<Trip, std::allocator<Trip> >::_M_default_initialize(unsigned long long) [89] bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  [18] elapsed(std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >) [96] std::vector<Trip, std::allocator<Trip> >::end() [103] bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+   [4] measure(Trip const&)   [97] std::vector<Trip, std::allocator<Trip> >::begin() [104] std::operator|(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+  [90] int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int) [98] std::vector<Trip, std::allocator<Trip> >::~vector() [92] __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int)::_Save_errno::_Save_errno()
+  [84] std::vector<Trip, std::allocator<Trip> >::end() const [88] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*) [93] __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long long*, int)::_Save_errno::~_Save_errno()
+  [85] std::vector<Trip, std::allocator<Trip> >::begin() const [21] void std::_Construct<Trip>(Trip*) [5] __fentry__
+  [82] std::char_traits<char>::length(char const*) [99] std::setprecision(int) [13] __gcc_deregister_frame
+  [83] std::char_traits<char>::compare(char const*, char const*, unsigned long long) [100] std::__size_to_integer(unsigned long long) [3] _mcount_private
+  [19] std::_Vector_base<Trip, std::allocator<Trip> >::_M_create_storage(unsigned long long) [101] Trip* std::__uninitialized_default_n<Trip*, unsigned long long>(Trip*, unsigned long long) [16] asin
+  [94] std::_Vector_base<Trip, std::allocator<Trip> >::_Vector_impl_data::_Vector_impl_data() [15] double const& std::max<double>(double const&, double const&) [17] cos
+   [8] Trip* std::__uninitialized_default_n_1<true>::__uninit_default_n<Trip*, unsigned long long>(Trip*, unsigned long long) [10] double const& std::min<double>(double const&, double const&) [12] llround
+  [95] std::fpos<_Mbstatet>::fpos(long long) [7] double const& std::clamp<double>(double const&, double const&, double const&) [1] main
+  [86] std::array<Bucket, 24ull>::end() [9] void std::__fill_a1<Trip*, Trip>(Trip*, Trip*, Trip const&) [14] sin
+  [87] std::array<Bucket, 24ull>::begin() [91] std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+  [11] std::array<Bucket, 24ull>::operator[](unsigned long long) [102] std::operator~(std::_Ios_Fmtflags)
