@@ -1,0 +1,79 @@
+// Build with GCC and -O3 -std=c++17 -fopenmp. Input is little-endian.
+#include <algorithm>
+#include <array>
+#include <chrono>
+#include <cmath>
+#include <cstdint>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <stdexcept>
+#include <string>
+#include <vector>
+
+struct Trip {
+    double lat1, lon1, lat2, lon2, miles;
+    std::int32_t hour, seconds;
+};
+static_assert(sizeof(Trip) == 48);
+struct Bucket {
+    std::int64_t trips{}, metered{}, direct{}, seconds{};
+    Bucket& operator+=(const Bucket& x) {
+        trips += x.trips; metered += x.metered; direct += x.direct; seconds += x.seconds;
+        return *this;
+    }
+};
+using Table = std::array<Bucket, 24>;
+inline Bucket measure(const Trip& t) {
+    constexpr double rad = 0.017453292519943295;
+    double a = std::sin((t.lat2 - t.lat1) * rad / 2);
+    double b = std::sin((t.lon2 - t.lon1) * rad / 2);
+    double h = a*a + std::cos(t.lat1*rad) * std::cos(t.lat2*rad) * b*b;
+    double direct = 12742000.0 * std::asin(std::sqrt(std::clamp(h, 0.0, 1.0)));
+    return {1, std::llround(t.miles * 1609.344), std::llround(direct), t.seconds};
+}
+
+void sequential(const std::vector<Trip>& trips, Table& out) {
+    for (const Trip& t : trips) out[t.hour] += measure(t);
+}
+using Clock = std::chrono::steady_clock;
+double elapsed(Clock::time_point from) {
+    return std::chrono::duration<double>(Clock::now()-from).count();
+}
+
+int main(int argc, char** argv) try {
+    if (argc != 6) throw std::runtime_error("usage: taxi FILE serial 1 static REPEATS");
+    std::string mode = argv[2], policy = argv[4];
+    int threads = std::stoi(argv[3]), repeats = std::stoi(argv[5]);
+    if (threads < 1 || repeats < 1) throw std::runtime_error("positive threads and repeats required");
+    auto before_load = Clock::now();
+    std::ifstream in(argv[1], std::ios::binary | std::ios::ate);
+    if (!in) throw std::runtime_error("cannot open input");
+    std::streamoff bytes = in.tellg();
+    if (bytes <= 0 || bytes % sizeof(Trip)) throw std::runtime_error("invalid input length");
+    std::vector<Trip> trips(bytes / sizeof(Trip));
+    in.seekg(0);
+    if (!in.read(reinterpret_cast<char*>(trips.data()), bytes)) throw std::runtime_error("short read");
+    for (const auto& t : trips) if (t.hour < 0 || t.hour >= 24) throw std::runtime_error("invalid hour");
+    std::cout << std::fixed << std::setprecision(7) << "load_s," << elapsed(before_load) << '\n';
+    if (mode != "serial") throw std::runtime_error("unknown mode");
+    Table result{};
+    // First pass warms code, data and the runtime. Retain output so every pass is observable.
+    for (int trial = 0; trial <= repeats; ++trial) {
+        result = {};
+        auto start = Clock::now();
+        sequential(trips, result);
+        double seconds = elapsed(start);
+        std::int64_t checksum = 0;
+        for (const auto& row : result) checksum += row.direct + row.seconds;
+        std::cout << (trial ? "trial," : "warmup,") << trial << ',' << seconds << ',' << checksum << '\n';
+    }
+    std::cout << "hour,trips,metered_m,direct_m,seconds\n";
+    for (size_t h=0; h<result.size(); ++h) {
+        const auto& r = result[h];
+        std::cout << h << ',' << r.trips << ',' << r.metered << ',' << r.direct << ',' << r.seconds << '\n';
+    }
+} catch (const std::exception& e) {
+    std::cerr << e.what() << '\n';
+    return 1;
+}
