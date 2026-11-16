@@ -1,6 +1,6 @@
 # Taxi Analytics
 
-SW 401 Parallel and Distributed Systems · Phase 1 · Fall 2026  
+SW 401 Parallel and Distributed Systems · Phase 1 (complete)· Fall 2026  
 Ahmed Wael and Seif Amr
 
 How much farther did yellow taxis travel than the straight-line distance between their endpoints in January 2015? This project aggregates metered distance, great-circle distance, trip count and duration by pickup hour. Across 12,435,056 retained trips, the ratio of total metered to total direct distance was 1.383. Static OpenMP reduced full-month compute time from 425.0 ms sequentially to 77.2 ms with eight workers on the test laptop.
